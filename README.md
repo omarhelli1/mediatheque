@@ -1,4 +1,9 @@
 # Mediateque
+estun projet simple permettant d'afficher les films, les CDs et les DVDs dans un médiatèque selon la modalité suivante:
+* Le composant product-page servira de composant parent. C'est lui qui contiendra les données des articles. 
+* Ce  composant appellera un composant enfant product-list dont la seule tâche sera de générer autant de cartes que nécessaire, en appellant le composant product-card.
+* Les composants enfant n'auront AUCUNE logique : ils ne seront chargés que de l'affichage. 
+* ProductListComponent est chargé d'afficher le composant ProductCardComponent, qui lui affiche les informations de l'article.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 
