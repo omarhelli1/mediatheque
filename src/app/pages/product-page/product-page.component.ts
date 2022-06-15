@@ -5,11 +5,22 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './product-page.component.html',
   styleUrls: ['./product-page.component.scss']
 })
+
+
 export class ProductPageComponent implements OnInit {
 
-  constructor() { }
+  articules: any[] = [];
+ constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {  }
+
+
+  addArticle(article: any) {
+    this.articules.push(article);
   }
 
+ 
+
 }
+
+
