@@ -9,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class ProductPageComponent implements OnInit {
 
-  article: any[] = [];
+  articles: any[] = [];
  constructor() {}
 
   ngOnInit(): void {  }
 
 
   addArticle(article: any) {
-    this.article.push(article);
+    this.articles.push(article);
   }
 
  
