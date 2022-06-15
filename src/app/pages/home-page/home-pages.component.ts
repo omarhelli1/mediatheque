@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePagesComponent implements OnInit {
 
+articles: any[] = [];
   constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  addArticle(article: any) {
+    this.articles.push(article);
   }
-
+  
 }

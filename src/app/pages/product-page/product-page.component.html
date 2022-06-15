@@ -1,18 +1,4 @@
 <p>product-page works!   parent</p>
 <h3>Liste des articles de Médiatheque</h3>
 
-
-<div>
-    <form [formGroup]="product-list" (ngSubmit)="onSubmit()">
-      <div>
-        <label> Désignation : </label>
-        <input type="text" formControlName="designation" />
-        <span *ngIf="submitted && !form['designation'].valid">
-          * Nom invalide
-        </span>
-      </div>
-      
-    </form>
-  </div>
-  
   

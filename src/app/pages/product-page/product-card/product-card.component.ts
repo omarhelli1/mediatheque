@@ -1,10 +1,13 @@
-import { Component,  OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss']
 })
+
+
 export class ProductCardComponent implements OnInit {
 
   films: any[] = [
@@ -59,6 +62,7 @@ export class ProductCardComponent implements OnInit {
 
 
   @Output()
+  onAddArticle: EventEmitter<any> = new EventEmitter();
  
   article: FormGroup = this.fb.group({
     id: ['', Validators.required],
@@ -73,14 +77,28 @@ export class ProductCardComponent implements OnInit {
   submitted: boolean = false;
 
   constructor(private fb: FormBuilder) { }
+  ngOnInit(): void { }
 
  
-  ngOnInit(): void {  }
-
-  get form() {
-    return this.article;
+  private resetForm(): void {
+    this.article.reset();
+    this.submitted = false;
   }
 
+  public onSubmit(): void {
 
+    this.submitted = true;
+
+    if(this.article.valid) {
+      this.onAddArticle.emit(this.article.value);
+      this.resetForm();
+    } else {
+      throw new Error("SES KC FRERO");
+    }
+  }
+
+  get form() {
+    return this.article.controls;
+  }
 }
 

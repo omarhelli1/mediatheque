@@ -1,8 +1,9 @@
 <p>home-pages works! Enfants</p>
 
 <ul>
-    <li *ngFor="let article of médiatheque">
-      {{ product-list.designation }} 
+    <li *ngFor="let article of articles">
+      {{ article.id }} : {{ article.nom }}:{{ article.real }} : {{ article.synopsis }}
+      :{{ article.annee }} : {{ article.img }}: {{ article.details }}
     </li>
   </ul>
   
