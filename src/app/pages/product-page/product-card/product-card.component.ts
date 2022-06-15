@@ -92,9 +92,7 @@ export class ProductCardComponent implements OnInit {
     if(this.article.valid) {
       this.onAddArticle.emit(this.article.value);
       this.resetForm();
-    } else {
-      throw new Error("SES KC FRERO");
-    }
+    } 
   }
 
   get form() {
